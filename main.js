@@ -5,16 +5,15 @@ window.onload = function () {
                             if (value == "") {
                                 ;
                             } else {
-                                console.log(Math.random);
                                 note.insertAdjacentHTML('beforeend', `  <div class="card mt-2 bg-dark">
                                                                         <div class="card-body">
                                                                             <div class="row">
                                                                                 <div class="col">
-                                                                                    <div class="text-start text-white font-monospace">${value}</div>
+                                                                                    <div class="text-start text-white font-monospace">${value.split('|')[0]}</div>
                                                                                 </div>
                                                                                 <div class='col'>
                                                                                     <div class="text-end">
-                                                                                        <input class="btn btn-sm btn-danger" type="button"  id=${generateUuid()} value="削除"  onclick="Remove_(this);">
+                                                                                        <input class="btn btn-sm btn-danger" type="button"  id=${value.split('|')[1]} value="削除"  onclick="Remove_(this);">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -31,7 +30,7 @@ function OnButtonClick() {
     } else {
         content = escapeHtml(content)
         var mem = localStorage.getItem("memo");
-        mem = [mem, content];
+        mem = [mem, content + '|' +generateUuid()];
         window.localStorage.setItem("memo", mem);
         location.reload();
     }
@@ -62,9 +61,14 @@ function generateUuid() {
 
 function Remove_(element) {
     var Rmem = localStorage.getItem("memo").split(',');
-    var Rlist = Rmem.indexOf(element.id);
-    Rmem.splice(Rlist, 1)
-    window.localStorage.setItem("memo", Rmem);
+    Rmem.forEach(function(elem, index) {
+        console.log(elem)
+        if (elem.split('|')[1] == element.id){
+            var Rlist = Rmem.indexOf(elem);
+            Rmem.splice(Rlist, 1)
+            window.localStorage.setItem("memo", Rmem);
+            window.localStorage.removeItem(elem);
+        }else{;};
+    });
     location.reload();
 }
-
