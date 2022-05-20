@@ -9,7 +9,7 @@ window.onload = function () {
                                                                         <div class="card-body">
                                                                             <div class="row">
                                                                                 <div class="col">
-                                                                                    <div class="text-start text-white font-monospace">${value.split('|')[0]}</div>
+                                                                                    <div class="text-start text-white font-monospace">${(value.split('|')[0])}</div>
                                                                                 </div>
                                                                                 <div class='col'>
                                                                                     <div class="text-end">
@@ -37,6 +37,7 @@ function OnButtonClick() {
 }
 
 function escapeHtml(str){
+    str = str.replace(",", "^");
     str = str.replace(/>/g, '&gt;');
     str = str.replace(/</g, '&lt;');
     str = str.replace(/"/g, '&quot;');
@@ -72,3 +73,4 @@ function Remove_(element) {
     });
     location.reload();
 }
+
