@@ -29,11 +29,22 @@ function OnButtonClick() {
 	if (content == "") {
 		alert('文字数が足りません');
 	} else {
+		content = escapeHtml(content)
 		var mem = localStorage.getItem("memo");
 		mem = [mem, content];
 		window.localStorage.setItem("memo", mem);
 		location.reload();
 	}
+}
+
+function escapeHtml(str){
+    str = str.replace(/&/g, '&amp;');
+    str = str.replace(/>/g, '&gt;');
+    str = str.replace(/</g, '&lt;');
+    str = str.replace(/"/g, '&quot;');
+    str = str.replace(/'/g, '&#x27;');
+    str = str.replace(/`/g, '&#x60;');
+    return str;
 }
 
 function Remove_(element) {
