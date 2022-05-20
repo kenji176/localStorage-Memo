@@ -9,7 +9,7 @@ window.onload = function() {
               <div class="card-body">
                <div class="row">
                   <div class="col">
-                      <div class="text-start text-white">${value}</div>
+                      <div class="text-start text-white font-monospace">${value}</div>
                   </div>
                   <div class='col'>
                       <div class="text-end">
