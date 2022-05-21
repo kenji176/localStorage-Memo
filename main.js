@@ -1,7 +1,6 @@
 window.onload = function() {
 	for (var i = 0, length = localStorage.length; i < length; ++i) {
-        var note = document.getElementById("memo")
-        console.log(localStorage.key(i));
+        var note = document.getElementById("memo");
         if (localStorage.key(i) == "") {;
 		} else {
 			note.insertAdjacentHTML('beforeend',
