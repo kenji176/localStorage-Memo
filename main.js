@@ -1,6 +1,6 @@
 window.onload = function() {
 	for (var i = 0, length = localStorage.length; i < length; ++i) {
-        var note = document.getElementById("memo");
+        const note = document.getElementById("memo");
         if (localStorage.key(i) == "") {;
 		} else {
 			note.insertAdjacentHTML('beforeend',
@@ -23,7 +23,7 @@ window.onload = function() {
 	}
 
 function OnButtonClick() {
-	var content = document.getElementById('send').value
+	const content = document.getElementById('send').value
 	if (content == "") {
 		alert('文字数が足りません');
 	} else {
@@ -44,8 +44,8 @@ function escapeHtml(str) {
 }
 
 function generateUuid() {
-	let chars = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("");
-	for (let i = 0, len = chars.length; i < len; i++) {
+	const chars = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("");
+	for (const i = 0, len = chars.length; i < len; i++) {
 		switch (chars[i]) {
 			case "x":
 				chars[i] = Math.floor(Math.random() * 16).toString(16);
@@ -59,7 +59,7 @@ function generateUuid() {
 }
 
 function Remove_(element) {
-    for (var i = 0, length = localStorage.length; i < length; ++i) {
+    for (const i = 0, length = localStorage.length; i < length; ++i) {
         console.log(element.id)
         console.log()
         if (element.id == localStorage.key(i)){
