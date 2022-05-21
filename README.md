@@ -1,8 +1,7 @@
 # localstrage memo
  
-ブラウザのローカルストレージに情報を保存する
-メモのようなものです
- 
+ブラウザのローカルストレージに情報を保存するメモ
+
 # デモページ
 
 https://kenji176.github.io/localStorage-Memo/index.html
