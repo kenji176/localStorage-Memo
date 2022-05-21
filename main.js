@@ -27,7 +27,8 @@ function OnButtonClick() {
 	if (content == "") {
 		alert('文字数が足りません');
 	} else {
-		content = escapeHtml(content)
+		content = escapeHtml(content);
+		console.log(content)
 		window.localStorage.setItem(generateUuid(),content);
 		location.reload();
 	}
