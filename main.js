@@ -27,9 +27,9 @@ function OnButtonClick() {
 	if (content == "") {
 		alert('文字数が足りません');
 	} else {
-		content = escapeHtml(content);
+		const escapetext = escapeHtml(content);
 		console.log(content)
-		window.localStorage.setItem(generateUuid(),content);
+		window.localStorage.setItem(generateUuid(),escapetext);
 		location.reload();
 	}
 }
