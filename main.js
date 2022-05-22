@@ -26,7 +26,7 @@ window.onload = function() {
 																			<div class="modal-body text-start">
 																				<div class="mb-3">
 																					<label for="exampleFormControlTextarea1" class="form-label"></label>
-																					<textarea class="form-control" id="sender-${localStorage.key(i)}"  rows="4" >${localStorage.getItem(localStorage.key(i)).replace(/<br>/g,'\n')}</textarea>
+																					<textarea class="form-control" id="sender-${localStorage.key(i)}"  rows="8" >${localStorage.getItem(localStorage.key(i)).replace(/<br>/g,'\n')}</textarea>
 																				</div>
 																			</div>
 																			<div class="modal-footer">
