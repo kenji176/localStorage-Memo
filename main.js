@@ -49,7 +49,7 @@ function Update_(element) {
 	if (U_text == "") {
 		alert('文字数が足りません');
 	} else {
-		window.localStorage.setItem(element.id,U_text);
+		window.localStorage.setItem(element.id,escapeHtml(U_text));
 		location.reload();
 	}
 }
