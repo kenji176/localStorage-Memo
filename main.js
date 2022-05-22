@@ -93,8 +93,6 @@ function generateUuid() {
 
 function Remove_(element) {
     for (const i = 0, length = localStorage.length; i < length; ++i) {
-        console.log(element.id)
-        console.log()
         if (element.id == localStorage.key(i)){
             window.localStorage.removeItem(element.id);
             location.reload();
