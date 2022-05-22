@@ -26,7 +26,7 @@ window.onload = function() {
 																			<div class="modal-body text-start">
 																				<div class="mb-3">
 																					<label for="exampleFormControlTextarea1" class="form-label"></label>
-																					<textarea class="form-control" id="sender-${localStorage.key(i)}"  rows="4" >${(localStorage.getItem(localStorage.key(i)))}</textarea>
+																					<textarea class="form-control" id="sender-${localStorage.key(i)}"  rows="4" >${localStorage.getItem(localStorage.key(i)).replace(/<br>/g,'\n')}</textarea>
 																				</div>
 																			</div>
 																			<div class="modal-footer">
@@ -93,6 +93,8 @@ function generateUuid() {
 
 function Remove_(element) {
     for (const i = 0, length = localStorage.length; i < length; ++i) {
+        console.log(element.id)
+        console.log()
         if (element.id == localStorage.key(i)){
             window.localStorage.removeItem(element.id);
             location.reload();
