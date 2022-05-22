@@ -35,12 +35,13 @@ function OnButtonClick() {
 }
 
 function escapeHtml(str) {
-	str = str.replace(",", "^");
 	str = str.replace(/>/g, '&gt;');
 	str = str.replace(/</g, '&lt;');
 	str = str.replace(/"/g, '&quot;');
 	str = str.replace(/'/g, '&#x27;');
 	str = str.replace(/`/g, '&#x60;');
+	str = str.replace(/\r?\n/g, '<br>');
+	str = str.replace(/\s/g,'&nbsp;')
 	return str;
 }
 
