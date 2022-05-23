@@ -4,8 +4,8 @@
 
 # デモページ
 
-https://kenji176.github.io/localStorage-Memo/index.html
- 
+https://kenji176.github.io/localStorage-Memo
+
 # Author
  
 * sinc
