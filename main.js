@@ -12,7 +12,7 @@ if(url.split('=')[0]=="?share"){
                                                     <div class="row">
                                                         <div class="col-7">
                                                             <div class="text-start text-white font-monospace text-wrap code">
-																${atob(text)}
+																${decodeURIComponent(text)}
 														</div>
                                                         </div>
                                                         <div class='col-5'>
@@ -97,7 +97,7 @@ if(url.split('=')[0]=="?share"){
 
 function Share_(element) {
 	const url = location.href
-	const share_url = url+'?share='+btoa(localStorage.getItem(element.id))
+	const share_url = url+'?share='+encodeURIComponent(localStorage.getItem(element.id))
 	navigator.clipboard.writeText(share_url)
 }
 function Update_(element) {
